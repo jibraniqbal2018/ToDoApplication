@@ -21,7 +21,7 @@ a{
 
 .container{
     width: 100%;
-    padding-top: 4%;
+    
 }
 
 .row{
@@ -30,7 +30,7 @@ a{
 
 .table-container{
     width: 90%;
-    max-height: 290px;
+    max-height: 285px;
     overflow: auto;
     margin-top: 2%;
     margin-left: 5%;
@@ -65,4 +65,13 @@ a{
 
 .width-15{
     width: 10%;
+}
+
+.heading{
+    text-shadow: 0 0 52px #3f51b5;
+    font-size: 42px;
+    font-family: serif;
+    color: #3f51b5;
+    font-weight: bold;
+    padding-top: 25px;
 }
