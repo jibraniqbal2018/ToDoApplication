@@ -1,0 +1,68 @@
+table{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: blue;
+}
+
+#deleteIcon{
+    color: black;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: darkgreen;
+}
+
+.container{
+    width: 100%;
+    padding-top: 4%;
+}
+
+.row{
+    margin-top: 2%;
+}
+
+.table-container{
+    width: 90%;
+    max-height: 290px;
+    overflow: auto;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.field-container{
+    width: 100%;
+}
+
+.field-width{
+    width: 25%;
+}
+
+.btn{
+    width: 15%;
+}
+
+.center-align{
+    text-align: center;
+}
+
+.width-25{
+    width: 25%;
+}
+
+.width-45{
+    width: 45%;
+}
+
+.width-20{
+    width: 20%;
+}
+
+.width-15{
+    width: 10%;
+}

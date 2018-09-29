@@ -1,0 +1,76 @@
+<div class="container">
+ 
+    <form [formGroup] = "todoFormGroup" (ngSubmit) = "todoFormGroup.valid && onSubmit(todoFormGroup.value)">
+        <div class="field-container">
+    <div class="row center-align">
+            <mat-form-field class="field-width">
+              <input matInput  placeholder="Title" formControlName = "taskName" maxlength ="100" required>
+              <mat-error>Please enter Title</mat-error>
+            </mat-form-field>
+      
+      </div>
+
+
+
+      
+    <div class="row center-align">
+            <mat-form-field class="field-width">
+                <textarea matInput placeholder="Description" formControlName = "description" maxlength ="500" required></textarea>
+                <mat-error>Please enter Description</mat-error>
+              </mat-form-field>
+            
+      </div>
+      <div class="row center-align">
+
+              <button class="btn" mat-raised-button color="primary">Add</button>
+              
+        </div>
+        </div>
+
+      <div class="table-container mat-elevation-z8">
+       <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef= "id">
+          <th  class="center-align" mat-header-cell *matHeaderCellDef>Id</th>
+          <td class="center-align" mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="taskName">
+          <th class="center-align width-25" mat-header-cell *matHeaderCellDef>Title</th>
+          <td class="center-align width-25" mat-cell *matCellDef="let element">{{element.taskName}}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="description">
+            <th class="center-align width-45" mat-header-cell *matHeaderCellDef>Description</th>
+            <td class="center-align width-45" mat-cell *matCellDef="let element">{{element.description}}</td>
+          </ng-container>
+        
+        <ng-container matColumnDef="status">
+          <th class="center-align width-20" mat-header-cell *matHeaderCellDef>Status</th>
+          <td class="center-align width-20" mat-cell *matCellDef="let element">
+          <div [ngClass]="element.status == 'Pending' ? 'red': 'green'">{{element.status}}</div>
+              
+            <span *ngIf = "element.status == 'Pending'"><a href="#" (click) = "markAsCompleted(element)" >Mark As Completed</a> </span> 
+          </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="delete">
+            <th class="center-align width-10" mat-header-cell *matHeaderCellDef>Delete</th>
+            <td class="center-align width-10" mat-cell *matCellDef="let element">
+                <a href="#" (click) = "deleteTask(element.id)" >
+                    <i id="deleteIcon" class="material-icons">
+                        delete
+                    </i>
+                </a>
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+      </table>
+      </div>
+      </form>
+</div>
+
+
+
